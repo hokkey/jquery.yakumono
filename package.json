@@ -1,0 +1,29 @@
+{
+  "name": "jquery.yakumono",
+  "version": "0.1",
+  "description": "日本語組版で約物のアキ量をカスタマイズするjQueryプラグイン",
+  "main": "./dist/jquery.yakumono.min.js",
+  "style": [
+    "./dist/jquery.yakumono.min.css"
+  ],
+  "keywords": "jquery-plugin",
+  "dependencies": {
+    "blast-text": "^2.0.0",
+    "jquery": "^3.1.1"
+  },
+  "scripts": {
+    "start": "frp build && frp serve -t",
+    "test": "frp task test",
+    "build": "frp build",
+    "serve": "frp serve",
+    "production": "frp build -p",
+    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hokkey/jquery.yakumono"
+  },
+  "author": "Yuma Hori",
+  "license": "MIT",
+  "private": true
+}
