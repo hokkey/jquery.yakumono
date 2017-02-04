@@ -1,5 +1,5 @@
 /*!
-  jQuery.yakumono (0.1.1) github.com/hokkey/jquery.yakumono
+  jQuery.yakumono (0.2.0) github.com/hokkey/jquery.yakumono
   (C) 2017 Yuma Hori.
   MIT @license: en.wikipedia.org/wiki/MIT_License
 */
