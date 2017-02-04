@@ -7,55 +7,14 @@ module.exports = function(production) {
     clean: {},
     html: {},
     style: production ? {} : {},
-    script: production ? {
-      resolve: {
-        modules: [
-          `${FRP_SRC}/js`,
-          path.join(process.cwd(), 'node_modules'),
-          path.join(__dirname, '../node_modules'),
-          "node_modules"
-        ],
-      },
-      resolveLoader: {
-        modules: [
-          path.join(process.cwd(), 'node_modules'),
-          path.join(__dirname, '../node_modules'),
-          "node_modules"
-        ]
-      },
-      module: {
-        rules: [
-          {test: /\.js$/, exclude: /node_modules/, loader: 'eslint-loader', enforce: 'pre'},
-          {test: /\.html$/, loader: 'html-loader'},
-          {test: /\.json$/, loader: 'json-loader'},
-        ]
-      },
-      plugins: [
-        new WebpackBuildNotifierPlugin({
-          title: "frp task script",
-          suppressSuccess: true
-        }),
-        new webpack.LoaderOptionsPlugin({
-          options: {
-            eslint: {
-              configFile: util.exists(localConfig) ? localConfig : globalConfig,
-              failOnError: true
-            },
-            babel: {
-              presets: ["es2015"]
-            }
-          }
-        })
-      ],
-      watchOptions: {
-        ignored: /node_modules/
-      },
-      performance: {
-        hints: false
-      }
-    } : { },
+    script: production ? {} : { },
     server: {},
-    copy: {},
+    copy: {
+      // blast.js
+      './node_modules/blast-text/jquery.blast.min.js': './public/assets/js',
+      // normalize.css
+      './node_modules/normalize.css/normalize.css': './public/assets/css'
+    },
     sprite: [],
     test: {}
   }

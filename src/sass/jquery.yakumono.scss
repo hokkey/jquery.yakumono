@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*!
+  jQuery.yakumono (0.1.1) github.com/hokkey/jquery.yakumono
+  (C) 2017 Yuma Hori.
+  MIT @license: en.wikipedia.org/wiki/MIT_License
+*/
+.js-yakumono {
+
+  // ベタ組みモード
+  &.is-betagumi {
+    text-align: justify;
+  }
+
+  // ベタ組み時の左右の余りを吸収する
+  &.is-betagumi-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // 字下げをする
+  &.is-jisage {
+    text-indent: 1em;
+
+    > p {
+      text-indent: 1em;
+    }
+  }
+
+  // ツメ組みモード
+  &.is-tsumegumi {
+    // 約物以外をプロポーショナル字形に
+    .js-char:not(.js-char--yakumono) {
+      font-feature-settings: 'palt' 1;
+    }
+  }
+
+  // 縦書きモード (experimental)
+  &.is-tategumi {
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+  }
+}
+
+// 約物・アキなし
+@mixin yakumono-aki-nashi() {
+  font-feature-settings: 'halt' 1;
+
+  .is-tategumi & {
+    font-feature-settings: 'vhal' 1;
+  }
+}
+
+// 行末約物半角
+.js-char--yakumono.is-end-of-line {
+  @include yakumono-aki-nashi();
+}
+
+// 始め括弧系
+.js-char--yakumono--hajimekakko {
+  // 始め括弧系・行頭
+  &.is-start-of-line,
+  // 始め括弧系の後に始め括弧系
+  // 「「 , 「（ , （「
+  &.js-char--yakumono--after--hajimekakko {
+    @include yakumono-aki-nashi();
+  }
+}
+
+// 終わり括弧系
+.js-char--yakumono--owarikakko {
+  // 終わり括弧系の後に終わり括弧系
+  // 」」, ）」 ,  」）
+  &.js-char--yakumono--before--owarikakko,
+  // 終わり括弧系の後に始め括弧系
+  // 」「 ,  ）「  ,  」（
+  &.js-char--yakumono--before--hajimekakko {
+    @include yakumono-aki-nashi();
+  }
+}
+
+// 句点
+.js-char--yakumono--kuten {
+  // 句点の後に始め括弧
+  // 。「
+  &.js-char--yakumono--before--hajimekakko,
+  // 句点の後に終わり括弧
+  // 。」
+  &.js-char--yakumono--before--owarikakko {
+    @include yakumono-aki-nashi();
+  }
+}
+
+// 読点
+.js-char--yakumono--touten {
+  // 読点の後に始め括弧
+  // 、「
+  &.js-char--yakumono--before--hajimekakko,
+  // 読点の後に終わり括弧
+  // 、」
+  &.js-char--yakumono--before--owarikakko {
+    @include yakumono-aki-nashi();
+  }
+}
+
+// 中点
+.js-char--yakumono--nakaten {
+  // 終わり括弧類 + 中点 + 始め括弧類
+  // 」・「 , ）・（
+  &.js-char--yakumono--after--owarikakko.js-char--yakumono--before--hajimekakko {
+    @include yakumono-aki-nashi();
+  }
+}

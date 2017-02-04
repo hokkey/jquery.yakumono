@@ -1,23 +1,23 @@
 {
   "name": "jquery.yakumono",
-  "version": "0.1",
+  "version": "0.2.0",
   "description": "日本語組版で約物のアキ量をカスタマイズするjQueryプラグイン",
   "main": "./dist/jquery.yakumono.min.js",
   "style": [
     "./dist/jquery.yakumono.min.css"
   ],
   "keywords": "jquery-plugin",
-  "dependencies": {
-    "blast-text": "^2.0.0",
-    "jquery": "^3.1.1"
-  },
   "scripts": {
-    "start": "frp build && frp serve -t",
-    "test": "frp task test",
-    "build": "frp build",
+    "build": "frp build && npm run babel",
     "serve": "frp serve",
-    "production": "frp build -p",
-    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0"
+    "production": "frp build -p && && npm run babel",
+    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0",
+    "babel": "babel src/babel -d public/assets/js"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,10 @@
   },
   "author": "Yuma Hori",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0",
+    "blast-text": "^2.0.0"
+  }
 }
