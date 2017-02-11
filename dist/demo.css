@@ -1,1 +1,37 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);body{font-family:"Noto Sans JP",sans-serif;font-weight:400;font-size:13px;line-height:1.8;margin:2em 10% 10%}body>div{background:#eee;border:#eee solid 1em;border-radius:5px;padding:1em 5em}.justify{text-align:justify}.vertical{height:40em;-ms-writing-mode:tb-rl;-webkit-writing-mode:vertical-rl;writing-mode:vertical-rl}.vertical>p{text-indent:1em}
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+body { font-family: "Noto Sans JP", sans-serif; margin-top: 2em; margin-left: 10px; margin-right: 10px; margin-bottom: 2em; }
+
+.page { margin-left: auto; margin-right: auto; max-width: 800px; }
+
+div, p { margin: 0; padding: 0; }
+
+img { max-width: 100%; width: 400px; position: relative; }
+
+.head, .head-small { line-height: 1; font-size: 12px; }
+
+.head { margin-left: -5px; margin-bottom: 30px; }
+
+.subtitle { font-size: 11px; margin-bottom: 10px; }
+
+.head-small { margin-top: 2em; }
+
+.frame { background: #eee; border: 1px solid #ccc; font-size: 12px; line-height: 1.8; padding: 10px 5%; position: relative; max-height: 9em; overflow-y: scroll; }
+
+@media all and (min-width: 600px) { .frame { max-height: 12.6em; } }
+
+.frame > div { position: relative; }
+
+.frame > div::before, .frame > div::after { content: ''; display: block; position: absolute; top: 0; bottom: 0; }
+
+.frame > div::before { left: 0; border-left: 1px solid #ccc; }
+
+.frame > div::after { right: 0; border-right: 1px solid #ccc; }
+
+.frame p + p { margin-top: 1em; }
+
+.justify { text-align: justify; }
+
+.vertical { height: 40em; -ms-writing-mode: tb-rl; -webkit-writing-mode: vertical-rl; writing-mode: vertical-rl; }
+
+.vertical > p { text-indent: 1em; }
+/*# sourceMappingURL=maps/demo.css.map */

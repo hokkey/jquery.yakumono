@@ -6,36 +6,37 @@
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="../dist/jquery.yakumono.min.css">
+  <link rel="stylesheet" href="jquery.yakumono.css">
   <link rel="stylesheet" href="demo.css">
 </head>
 <body>
 
-<p>
-  <img src="https://cloud.githubusercontent.com/assets/6197292/22620263/6a64512a-eb4b-11e6-9209-a1935ef4db14.png" alt="jQuery.yakumono"/><br/>
-  <a href="https://github.com/hokkey/jquery.yakumono" target="_blank">jQuery.yakumono</a><br/>
-  ※Chrome, Firefoxでしか動作しません。
-</p>
+<div class="page">
 
-<div>
-  <div class="js-yakumono js-yakumono-2"><p>「□□」・「□・□、」「（□□）」（「□□」）</p></div>
+<h1 class="head">
+  <a href="https://github.com/hokkey/jquery.yakumono" target="_blank">
+    <img src="https://cloud.githubusercontent.com/assets/6197292/22620263/6a64512a-eb4b-11e6-9209-a1935ef4db14.png" alt="jQuery.yakumono"/><br/>
+  </a>
+</h1>
+
+<p class="subtitle">※Chrome, Firefox, Safariでしか動作しません。</p>
+
+<h2 class="head-small">jquery.yakumono・ベタ組み：</h2>
+<div class="frame"><div class="demo js-yakumono js-yakumono-beta"></div></div>
+
+<h2 class="head-small">jquery.yakumono・ツメ組み+ジャスティファイ：</h2>
+<div class="frame"><div class="demo justify js-yakumono js-yakumono-tsume"></div></div>
+
+<h2 class="head-small">調整なしのジャスティファイ：</h2>
+<div class="frame"><div class="demo justify"></div></div>
+
+<p class="head-small"><a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">&copy; 2017 Yuma Hori MIT license</a></p>
+
 </div>
 
-<small><b>jquery.yakumono・ベタ組み：</b></small>
-<div><div class="demo js-yakumono js-yakumono-2"></div></div>
-
-<small><b>jquery.yakumono・ツメ組み+ジャスティファイ：</b></small>
-<div><div class="demo justify js-yakumono js-yakumono-1"></div></div>
-
-<small><b>未調整+ジャスティファイ：</b></small>
-<div><div class="demo justify"></div></div>
-
-<small><b>未調整：</b></small>
-<div><div class="demo"></div></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="jquery.blast.min.js"></script>
-<script src="../dist/jquery.yakumono.min.js"></script>
+<script src="https://cdn.rawgit.com/julianshapiro/blast/master/jquery.blast.min.js"></script>
+<script src="jquery.yakumono.js"></script>
 <script src="demo.js"></script>
 </body>
 </html>

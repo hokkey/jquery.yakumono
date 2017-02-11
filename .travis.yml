@@ -5,4 +5,4 @@ node_js:
 before_script:
   - npm install -g frontplate-cli
 script:
-  - frp task build
+  - npm run production

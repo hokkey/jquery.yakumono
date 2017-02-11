@@ -1,10 +1,15 @@
-## 0.1.1 (2015-02-05)
- 
-* jQueryプラグインとしての体裁を整える
+<a name="0.2.0"></a>
+# 0.2.0 (2017-02-11)
 
-## 0.1.0 (2015-01-23)
 
-* 最初のリリース
+### Bug Fixes
+
+* 不要なconsole.log()を除去 ([1cae190](https://github.com/hokkey/jquery.yakumono/commit/1cae190))
+
+
+### Features
+
+* バージョン0.3.0 ([6ae750a](https://github.com/hokkey/jquery.yakumono/commit/6ae750a))
 
 
 

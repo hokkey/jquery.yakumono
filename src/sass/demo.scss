@@ -3,18 +3,87 @@
 
 body {
   font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.8;
-  margin: 10%;
+  margin-top: 2em;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 2em;
+}
+
+.page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+div, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 400px;
+  position: relative;
+}
+
+.head, .head-small {
+  line-height: 1;
+  font-size: 12px;
+}
+
+.head {
+  margin-left: -5px;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.head-small {
   margin-top: 2em;
 }
 
-body > div {
+.frame {
   background: #eee;
-  border: #eee solid 1em;
-  border-radius: 5px;
-  padding: 1em 5em;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 10px 5%;
+  position: relative;
+  max-height: 1.8 * 5em;
+  overflow-y: scroll;
+
+  @media all and (min-width: 600px) {
+    max-height: 1.8 * 7em;
+  }
+
+  > div {
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      left: 0;
+      border-left: 1px solid #ccc;
+    }
+
+    &::after {
+      right: 0;
+      border-right: 1px solid #ccc;
+    }
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
 }
 
 .justify {
@@ -30,4 +99,8 @@ body > div {
   > p {
     text-indent: 1em;
   }
+}
+
+.demo {
+  //border: 1px solid gray;
 }
