@@ -1,0 +1,48 @@
+/*! jQuery.yakumono (0.3.0) github.com/hokkey/jquery.yakumono (C) 2017 Yuma Hori. MIT @license: en.wikipedia.org/wiki/MIT_License */
+.js-yakumono .is-oidashi { margin-right: .5em; }
+
+.js-yakumono .is-oidashi.is-tategumi { margin-right: 0; margin-bottom: .5em; }
+
+.js-yakumono .is-oidashi-small { margin-right: .01em; }
+
+.js-yakumono .is-oidashi-small.is-tategumi { margin-right: 0; margin-bottom: .01em; }
+
+.js-yakumono.is-betagumi { text-align: justify; box-sizing: content-box; }
+
+.js-yakumono.is-betagumi-center { margin-left: auto; margin-right: auto; }
+
+.js-yakumono.is-jisage { text-indent: 1em; }
+
+.js-yakumono.is-jisage > p, .js-yakumono.is-jisage .js-jisage { text-indent: 1em; }
+
+.js-yakumono.is-tsumegumi .js-char:not(.js-char-yakumono) { font-feature-settings: 'palt' 1; }
+
+.js-yakumono.is-tategumi { -ms-writing-mode: tb-rl; -webkit-writing-mode: vertical-rl; writing-mode: vertical-rl; }
+
+.js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--owarikakko.is-end-of-line, .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--kuten.is-end-of-line, .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--touten.is-end-of-line, .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--nakaten.is-end-of-line { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--owarikakko.is-end-of-line, .is-tategumi .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--kuten.is-end-of-line, .is-tategumi .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--touten.is-end-of-line, .is-tategumi .js-yakumono.is-gyomatsu-yakumono-hankaku .js-char-yakumono--nakaten.is-end-of-line { font-feature-settings: 'vhal' 1; }
+
+.js-char-yakumono--hajimekakko.is-start-of-line, .js-char-yakumono--hajimekakko.js-char-yakumono--after--hajimekakko { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-char-yakumono--hajimekakko.is-start-of-line, .is-tategumi .js-char-yakumono--hajimekakko.js-char-yakumono--after--hajimekakko { font-feature-settings: 'vhal' 1; }
+
+.is-safari .js-char-yakumono--hajimekakko.is-start-of-line, .is-safari .js-char-yakumono--hajimekakko.js-char-yakumono--after--hajimekakko { position: relative; left: -.5em; }
+
+.js-char-yakumono--owarikakko.js-char-yakumono--before--owarikakko, .js-char-yakumono--owarikakko.js-char-yakumono--before--hajimekakko { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-char-yakumono--owarikakko.js-char-yakumono--before--owarikakko, .is-tategumi .js-char-yakumono--owarikakko.js-char-yakumono--before--hajimekakko { font-feature-settings: 'vhal' 1; }
+
+.js-char-yakumono--kuten.js-char-yakumono--before--hajimekakko, .js-char-yakumono--kuten.js-char-yakumono--before--owarikakko { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-char-yakumono--kuten.js-char-yakumono--before--hajimekakko, .is-tategumi .js-char-yakumono--kuten.js-char-yakumono--before--owarikakko { font-feature-settings: 'vhal' 1; }
+
+.js-char-yakumono--touten.js-char-yakumono--before--hajimekakko, .js-char-yakumono--touten.js-char-yakumono--before--owarikakko { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-char-yakumono--touten.js-char-yakumono--before--hajimekakko, .is-tategumi .js-char-yakumono--touten.js-char-yakumono--before--owarikakko { font-feature-settings: 'vhal' 1; }
+
+.js-char-yakumono--nakaten.js-char-yakumono--after--owarikakko.js-char-yakumono--before--hajimekakko { font-feature-settings: 'halt' 1; }
+
+.is-tategumi .js-char-yakumono--nakaten.js-char-yakumono--after--owarikakko.js-char-yakumono--before--hajimekakko { font-feature-settings: 'vhal' 1; }
+
+.is-safari .js-char-yakumono--nakaten.js-char-yakumono--after--owarikakko.js-char-yakumono--before--hajimekakko { position: relative; left: -.25em; }

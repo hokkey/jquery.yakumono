@@ -1,17 +1,49 @@
 @charset "utf-8";
 /*!
-  jQuery.yakumono (0.2.0) github.com/hokkey/jquery.yakumono
+  jQuery.yakumono (0.3.0) github.com/hokkey/jquery.yakumono
   (C) 2017 Yuma Hori.
   MIT @license: en.wikipedia.org/wiki/MIT_License
 */
+
+// 約物・アキなしミックスイン
+@mixin yakumono-aki-nashi() {
+  font-feature-settings: 'halt' 1;
+
+  .is-tategumi & {
+    font-feature-settings: 'vhal' 1;
+  }
+}
+
 .js-yakumono {
+
+  // 行末文字の影響で意図しない追い込みが発生してしまった場合の追い出し処理
+  .is-oidashi {
+    margin-right: .5em;
+
+    &.is-tategumi {
+      margin-right: 0;
+      margin-bottom: .5em;
+    }
+  }
+  // 行頭文字の影響で意図しない追い込みが発生してしまった場合の追い出し処理
+  .is-oidashi-small {
+    margin-right: .01em;
+
+    &.is-tategumi {
+      margin-right: 0;
+      margin-bottom: .01em;
+    }
+  }
 
   // ベタ組みモード
   &.is-betagumi {
     text-align: justify;
+
+    // borderやpaddingがあっても横幅に影響しないようにする
+    box-sizing: content-box;
   }
 
-  // ベタ組み時の左右の余りを吸収する
+  // ベタ組み時の左右の余りを左右マージンで吸収する
   &.is-betagumi-center {
     margin-left: auto;
     margin-right: auto;
@@ -21,7 +53,7 @@
   &.is-jisage {
     text-indent: 1em;
 
-    > p {
+    > p, .js-jisage {
       text-indent: 1em;
     }
   }
@@ -29,7 +61,7 @@
   // ツメ組みモード
   &.is-tsumegumi {
     // 約物以外をプロポーショナル字形に
-    .js-char:not(.js-char--yakumono) {
+    .js-char:not(.js-char-yakumono) {
       font-feature-settings: 'palt' 1;
     }
   }
@@ -42,72 +74,83 @@
   }
 }
 
-// 約物・アキなし
-@mixin yakumono-aki-nashi() {
-  font-feature-settings: 'halt' 1;
-
-  .is-tategumi & {
-    font-feature-settings: 'vhal' 1;
+// 行末約物半角モード
+.js-yakumono.is-gyomatsu-yakumono-hankaku {
+  .js-char-yakumono--owarikakko,
+  .js-char-yakumono--kuten,
+  .js-char-yakumono--touten,
+  .js-char-yakumono--nakaten {
+    &.is-end-of-line {
+      @include yakumono-aki-nashi();
+    }
   }
 }
 
-// 行末約物半角
-.js-char--yakumono.is-end-of-line {
-  @include yakumono-aki-nashi();
-}
-
 // 始め括弧系
-.js-char--yakumono--hajimekakko {
+.js-char-yakumono--hajimekakko {
   // 始め括弧系・行頭
   &.is-start-of-line,
   // 始め括弧系の後に始め括弧系
   // 「「 , 「（ , （「
-  &.js-char--yakumono--after--hajimekakko {
+  &.js-char-yakumono--after--hajimekakko {
     @include yakumono-aki-nashi();
+
+    // Safari用ポリフィル
+    .is-safari & {
+      // 半角ずらす
+      position: relative;
+      left: -.5em;
+    }
   }
 }
 
 // 終わり括弧系
-.js-char--yakumono--owarikakko {
+.js-char-yakumono--owarikakko {
   // 終わり括弧系の後に終わり括弧系
   // 」」, ）」 ,  」）
-  &.js-char--yakumono--before--owarikakko,
+  &.js-char-yakumono--before--owarikakko,
   // 終わり括弧系の後に始め括弧系
   // 」「 ,  ）「  ,  」（
-  &.js-char--yakumono--before--hajimekakko {
+  &.js-char-yakumono--before--hajimekakko {
     @include yakumono-aki-nashi();
   }
 }
 
 // 句点
-.js-char--yakumono--kuten {
+.js-char-yakumono--kuten {
   // 句点の後に始め括弧
   // 。「
-  &.js-char--yakumono--before--hajimekakko,
+  &.js-char-yakumono--before--hajimekakko,
   // 句点の後に終わり括弧
   // 。」
-  &.js-char--yakumono--before--owarikakko {
+  &.js-char-yakumono--before--owarikakko {
     @include yakumono-aki-nashi();
   }
 }
 
 // 読点
-.js-char--yakumono--touten {
+.js-char-yakumono--touten {
   // 読点の後に始め括弧
   // 、「
-  &.js-char--yakumono--before--hajimekakko,
+  &.js-char-yakumono--before--hajimekakko,
   // 読点の後に終わり括弧
   // 、」
-  &.js-char--yakumono--before--owarikakko {
+  &.js-char-yakumono--before--owarikakko {
     @include yakumono-aki-nashi();
   }
 }
 
 // 中点
-.js-char--yakumono--nakaten {
+.js-char-yakumono--nakaten {
   // 終わり括弧類 + 中点 + 始め括弧類
   // 」・「 , ）・（
-  &.js-char--yakumono--after--owarikakko.js-char--yakumono--before--hajimekakko {
+  &.js-char-yakumono--after--owarikakko.js-char-yakumono--before--hajimekakko {
     @include yakumono-aki-nashi();
+
+    // Safari用ポリフィル
+    .is-safari & {
+      position: relative;
+      left: -.25em;
+    }
   }
 }
