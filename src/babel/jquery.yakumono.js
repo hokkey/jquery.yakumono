@@ -117,7 +117,6 @@
         $elem.addClass(settings.className.betagumi).width('');
 
         const fontSizePx = parseInt($elem.css('font-size'), 10);
-        console.log(fontSizePx);
         const actualWidthPx = $elem.width();
         const characters = Math.floor(actualWidthPx / fontSizePx);
         $elem.width(`${characters}em`);
@@ -129,7 +128,6 @@
         $elem.addClass(settings.className.betagumi).height('');
 
         const fontSizePx = parseInt($elem.css('font-size'), 10);
-        console.log(fontSizePx);
         const actualWidthPx = $elem.height();
         const characters = Math.floor(actualWidthPx / fontSizePx);
         $elem.height(`${characters}em`);
