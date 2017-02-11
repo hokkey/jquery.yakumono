@@ -8,16 +8,26 @@
   ],
   "keywords": "jquery-plugin",
   "scripts": {
-    "build": "frp build && npm run babel",
-    "serve": "frp serve",
-    "production": "frp build -p && && npm run babel",
     "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0",
-    "babel": "babel src/babel -d public/assets/js"
+    "serve": "npm run build && frp serve",
+    "build": "frp build && npm run babel",
+    "production": "rm -r dist/* && npm run build && npm run cp1 && frp build -p && npm run babili && npm run cp2",
+    "babel": "babel src/babel -d dev/",
+    "babili": "BABEL_ENV=production babel src/babel/jquery.yakumono.js --out-file dist/jquery.yakumono.min.js",
+    "cp1": "cp dev/*.js dist/ & cp dev/*.css dist/ & cp dev/index.html dist/index.html",
+    "cp2": "cp dev/jquery.yakumono.css dist/jquery.yakumono.min.css"
   },
   "babel": {
     "presets": [
       "latest"
-    ]
+    ],
+    "env": {
+      "production": {
+        "presets": [
+          "babili"
+        ]
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -28,6 +38,7 @@
   "private": true,
   "devDependencies": {
     "babel-cli": "^6.22.2",
+    "babel-preset-babili": "0.0.11",
     "babel-preset-latest": "^6.22.0",
     "blast-text": "^2.0.0"
   }

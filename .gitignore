@@ -1,5 +1,7 @@
 .idea
 .sass-cache
 .DS_Store
+node-debug.log
 node_modules
 guide
+dev
