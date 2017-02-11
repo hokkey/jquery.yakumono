@@ -72,7 +72,7 @@ http://codepen.io/hokkey/pen/zNzwQL
 jQueryとblast.jsが必須です。
 
 ```
-npm install --save-dev jquery-yakumono jquery blast-text
+npm install --save-dev jquery.yakumono jquery blast-text
 ```
 
 ## 使い方とオプション

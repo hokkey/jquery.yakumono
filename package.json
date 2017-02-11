@@ -1,6 +1,6 @@
 {
   "name": "jquery.yakumono",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "日本語組版で約物のアキ量をカスタマイズするjQueryプラグイン",
   "main": "./dist/jquery.yakumono.min.js",
   "style": [
