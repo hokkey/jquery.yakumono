@@ -2,6 +2,8 @@
 
 ![jQuery.yakumono](https://cloud.githubusercontent.com/assets/6197292/22620263/6a64512a-eb4b-11e6-9209-a1935ef4db14.png)
 
+[![Build Status](https://travis-ci.org/hokkey/jquery.yakumono.svg?branch=master)](https://travis-ci.org/hokkey/jquery.yakumono)
+
 `font-feature-settings`の機能を使い、現在のWebブラウザに不足している日本語組版関係の機能を補完するjQueryプラグインです。
 
 `「□□」・「□・□、」「（□□）」（「□□」）`などの約物が連続するパターンで不要な約物のアキを調整し、より美しい組版を実現します。
