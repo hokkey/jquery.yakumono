@@ -1,12 +1,28 @@
 {
   "name": "jquery.yakumono",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "日本語組版で約物のアキ量をカスタマイズするjQueryプラグイン",
   "main": "./dist/jquery.yakumono.min.js",
   "style": [
     "./dist/jquery.yakumono.min.css"
   ],
-  "keywords": "jquery-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hokkey/jquery.yakumono"
+  },
+  "keywords": [
+    "jquery",
+    "japanese",
+    "typography",
+    "日本語",
+    "タイポグラフィ"
+  ],
+  "author": "Yuma Hori <hokkey@gmail.com> (http://media-massage.net/profile/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hokkey/jquery.yakumono/issues"
+  },
+  "homepage": "https://github.com/hokkey/jquery.yakumono#readme",
   "scripts": {
     "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0",
     "serve": "npm run build && frp serve",
@@ -29,17 +45,9 @@
       }
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:hokkey/jquery.yakumono"
-  },
-  "author": "Yuma Hori",
-  "license": "MIT",
-  "private": true,
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-preset-babili": "0.0.11",
-    "babel-preset-latest": "^6.22.0",
-    "blast-text": "^2.0.0"
+    "babel-preset-latest": "^6.22.0"
   }
 }
