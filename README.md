@@ -1,6 +1,6 @@
 # jQuery.yakumono
 
-![jQuery.yakumono](https://cloud.githubusercontent.com/assets/6197292/22620263/6a64512a-eb4b-11e6-9209-a1935ef4db14.png)
+![jQuery.yakumono](https://cloud.githubusercontent.com/assets/6197292/23058600/1dff15ac-f539-11e6-8c71-eaabfe263b9a.png)
 
 [![Build Status](https://travis-ci.org/hokkey/jquery.yakumono.svg?branch=master)](https://travis-ci.org/hokkey/jquery.yakumono)
 
@@ -84,12 +84,9 @@ npm install --save-dev jquery.yakumono jquery blast-text
 ...
 <link rel="stylesheet" href="css/jquery.yakumono.min.css"/>
 </head>
-
 <body>
 
 <div class="js-yakumono"><p>ここに本文を入力</p></div>
-
-</body>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/jquery.blast.min.js"></script>
@@ -175,7 +172,8 @@ dict: {
 ```js
 $('.js-yakumono').yakumono({
  dict: {
-   kome: /※/
+   kome: /※/,
+   kansuji: /一|二|三|四|五|六|七|八|九|十|〇/
  },
 });
 ````
