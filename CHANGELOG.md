@@ -1,10 +1,20 @@
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/hokkey/jquery.yakumono/compare/v0.3.1...v0.3.2) (2017-02-19)
+
+
+### docs
+
+* ドキュメントの訂正 ([0f529dbaa3df1119db126a8c79c6df97980112e2](https://github.com/hokkey/jquery.yakumono/commit/0f529dbaa3df1119db126a8c79c6df97980112e2))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/hokkey/jquery.yakumono/compare/v0.3.0...v0.3.1) (2017-02-11)
 
 
 ### docs
 
-* ドキュメントの訂正 ([6b46cee6f887ae0378afe1391c42bd6215995799](https://github.com/hokkey/jquery.yakumono/commit/6b46cee6f887ae0378afe1391c42bd6215995799))
+* ドキュメントの訂正 ([aa2efdf4f193adfed30760d29320a9e763e919f8](https://github.com/hokkey/jquery.yakumono/commit/aa2efdf4f193adfed30760d29320a9e763e919f8))
 
 
 
