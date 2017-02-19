@@ -9,7 +9,7 @@ img { max-width: 100%; width: 400px; position: relative; }
 
 .head, .head-small { line-height: 1; font-size: 12px; }
 
-.head { margin-left: -5px; margin-bottom: 30px; }
+.head { text-align: center; }
 
 .subtitle { font-size: 11px; margin-bottom: 10px; }
 

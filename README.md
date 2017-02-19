@@ -69,7 +69,7 @@ http://codepen.io/hokkey/pen/zNzwQL
   
 ## インストール
 
-jQueryとblast.jsが必須です。
+jQueryとblast.jsが必須です。jQuery.yakumonoはrequireに対応していますが、依存するblast.jsはrequireに対応していません。
 
 ```
 npm install --save-dev jquery.yakumono jquery blast-text
@@ -96,10 +96,7 @@ npm install --save-dev jquery.yakumono jquery blast-text
 $('.js-yakumono').yakumono({
    // ブラウザがSafariの場合にポリフィルを有効にする
    polyfillSafari: true,
-  
-   // Safari用のポリフィルを強制的に有効にする
-   safariMode: false,
-  
+
    // 全角ハイフンをケイ線文字に置換する
    replaceDash: false,
   
@@ -121,7 +118,7 @@ $('.js-yakumono').yakumono({
    // ベタ組みで左右の余りを余白で吸収する
    betagumiCenter: false,
   
-   // ツメ組みにする
+   // ツメ組みにする (ベタ組みは無効化されます)
    isTsumegumi: false,
   
    // 段頭の字下げを有効にする
@@ -167,7 +164,7 @@ dict: {
 },
 ````
 
-初期化時に独自の設定を渡すこともできます。
+初期化時に独自の設定を追加できます。
 
 ```js
 $('.js-yakumono').yakumono({
@@ -272,11 +269,26 @@ $('.js-yakumono').yakumono({
 }
 ```
 
+## 開発方法
+
+ビルド処理の一部に[frontplate-cli](https://www.npmjs.com/package/frontplate-cli)への依存があります。
+
+```
+npm i -g frontplate-cli
+git clone https://github.com/hokkey/jquery.yakumono.git
+npm i
+
+# 開発用ビルド
+npm run build
+
+# リリース用ビルド
+npm run production
+```
+
 ## 作者について
 
 http://media-massage.net/profile/
   
 ## ライセンス
 
-Copyright (c) 2017 Yuma Hori
 MIT License
